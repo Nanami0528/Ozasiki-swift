@@ -79,7 +79,7 @@ class ViewController: UIViewController {
         
         isMultiTapped = true
         print("true2　同時タップ")
-        
+         
     }
     
     
