@@ -19,6 +19,7 @@
 		E9640BC81C396DBF009EEA24 /* Ozasiki_test01_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9640BC71C396DBF009EEA24 /* Ozasiki_test01_swiftTests.swift */; };
 		E9640BD31C396DBF009EEA24 /* Ozasiki_test01_swiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9640BD21C396DBF009EEA24 /* Ozasiki_test01_swiftUITests.swift */; };
 		E9640C651C4A1FC0009EEA24 /* 手のひら.png in Resources */ = {isa = PBXBuildFile; fileRef = E9640C641C4A1FC0009EEA24 /* 手のひら.png */; };
+		E97AFB8E1C5CBE9E009F3976 /* GameclearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97AFB8D1C5CBE9E009F3976 /* GameclearViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		E9640BD21C396DBF009EEA24 /* Ozasiki_test01_swiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ozasiki_test01_swiftUITests.swift; sourceTree = "<group>"; };
 		E9640BD41C396DBF009EEA24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9640C641C4A1FC0009EEA24 /* 手のひら.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "手のひら.png"; sourceTree = "<group>"; };
+		E97AFB8D1C5CBE9E009F3976 /* GameclearViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameclearViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				E9640C641C4A1FC0009EEA24 /* 手のひら.png */,
 				E9640BB21C396DBF009EEA24 /* AppDelegate.swift */,
 				E9640BB41C396DBF009EEA24 /* ViewController.swift */,
+				E97AFB8D1C5CBE9E009F3976 /* GameclearViewController.swift */,
 				E928D9011C5C89A5009C83E2 /* GameoverViewController.swift */,
 				E9640BB61C396DBF009EEA24 /* Main.storyboard */,
 				E9640BB91C396DBF009EEA24 /* Assets.xcassets */,
@@ -275,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E97AFB8E1C5CBE9E009F3976 /* GameclearViewController.swift in Sources */,
 				E9640BB51C396DBF009EEA24 /* ViewController.swift in Sources */,
 				E9640BB31C396DBF009EEA24 /* AppDelegate.swift in Sources */,
 				E928D9021C5C89A5009C83E2 /* GameoverViewController.swift in Sources */,

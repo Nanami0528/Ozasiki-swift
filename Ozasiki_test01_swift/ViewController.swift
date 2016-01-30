@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet var lefthand:UIImageView!
    // @IBOutlet var centerhand:UIImageView!
     @IBOutlet var tapview:UIView!
+    @IBOutlet var scorel:UILabel!
+
+    
 
 
     
@@ -23,7 +26,7 @@ class ViewController: UIViewController {
     var isTapped:Bool = false
     var isMultiTapped:Bool = false
     var ran: UInt32 = 0
-
+    var tapCount:Int = 0
     
 
     override func viewDidLoad() {
@@ -40,9 +43,9 @@ class ViewController: UIViewController {
         tapview.addGestureRecognizer(tapGestureRecognizer)//tapviewにaddする
         
         //二本指tap検知
-        let tapGestureRecognizer2 = UITapGestureRecognizer(target: self, action: "view_Tapped2")
-        tapGestureRecognizer2.numberOfTouchesRequired = 2
-        tapview.addGestureRecognizer(tapGestureRecognizer2)
+        let multitapGestureRecognizer = UITapGestureRecognizer(target: self, action: "view_MultiTapped")
+        multitapGestureRecognizer.numberOfTouchesRequired = 2
+        tapview.addGestureRecognizer(multitapGestureRecognizer)
 
         
       
@@ -62,12 +65,16 @@ class ViewController: UIViewController {
     
     
     func view_Tapped(){
+        scorel.text = String(tapCount)
+
 
        isTapped = true
         print("true1　ワンタップ")
         
     }
-    func view_Tapped2(){
+    func view_MultiTapped(){
+        scorel.text = String(tapCount)
+
         
         
         isMultiTapped = true
@@ -80,9 +87,10 @@ class ViewController: UIViewController {
     func up(){                                                                        //タイマー
         timeCount = timeCount + 1
         timeCountl.text = String(timeCount)
-        //let ran = arc4random_uniform(2)
+        
 
 
+//数字　表示ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
       if timeCount<30 && ran==1 {
             print("1")
 
@@ -90,6 +98,11 @@ class ViewController: UIViewController {
              print("0")
         }
 
+//数字　表示ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+        
+        if tapCount==10{
+            self .gameclear()
+        }
         
         
         
@@ -122,6 +135,32 @@ class ViewController: UIViewController {
    
         }else if timeCount%2==1{
             
+            if timeCount>4 {
+                
+                if ran==0{
+                    
+                    if isTapped == true {
+                        tapCount=tapCount+1
+                    }else{
+                        self .gameover()
+                    }
+                    
+                }
+                if ran==1{
+                    
+                    if isMultiTapped == true{
+                        tapCount=tapCount+1
+                    }else{
+                        self .gameover()
+                    }
+                    
+                }
+                
+            }
+            
+            isTapped = false
+            isMultiTapped = false
+            
             
             ran = arc4random_uniform(2)
             
@@ -145,7 +184,7 @@ class ViewController: UIViewController {
                         self.hand.center = self.lefthand.center
                     }
                 )
-//--------------------------------------グーのアニメーション---おわり-----------------------------------------
+//------------------------------------グーのアニメーション・パー始まり---おわり-----------------------------------------
             }else if(ran==1){
                 UIView.animateWithDuration(
                     0.8,
@@ -164,6 +203,8 @@ class ViewController: UIViewController {
                     }
                 )
             }
+//--------------------------------------パーのアニメーション---おわり-----------------------------------------
+
         }//奇数
         
         
@@ -176,6 +217,13 @@ class ViewController: UIViewController {
         
 let targetView = self.storyboard!.instantiateViewControllerWithIdentifier( "gameover" )
         self.presentViewController( targetView as! GameoverViewController, animated: true, completion: nil)
+        
+    }
+
+    func gameclear(){
+        
+        let targetView = self.storyboard!.instantiateViewControllerWithIdentifier( "gameclear" )
+        self.presentViewController( targetView as! GameclearViewController, animated: true, completion: nil)
         
     }
 
