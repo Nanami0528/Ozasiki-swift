@@ -106,7 +106,7 @@ class ViewController: UIViewController {
                     self.hand.image = UIImage(named: "お座敷　手中間.png")
                     self.hand.transform = CGAffineTransformMakeScale(2.5, 2.5)
                     self.hand.transform = CGAffineTransformMakeScale(1.0, 1.0)
-                   
+                    
                    
                 },
                 completion:{isSucceeded in
