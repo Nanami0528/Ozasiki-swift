@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet var scorel:UILabel!
     @IBOutlet var startButton:UIButton!
     @IBOutlet var countdown:UILabel!
+    @IBOutlet var myhand:UIImageView!
     
     var timeCount:Double = 0
     var timer: NSTimer!
@@ -39,6 +40,8 @@ class ViewController: UIViewController {
         let multitapGestureRecognizer = UITapGestureRecognizer(target: self, action: "view_MultiTapped")
         multitapGestureRecognizer.numberOfTouchesRequired = 2
         tapview.addGestureRecognizer(multitapGestureRecognizer)
+        
+        myhand.hidden = true
       
     }
     @IBAction func start(){
@@ -52,12 +55,48 @@ class ViewController: UIViewController {
     func view_Tapped(){
         scorel.text = String(tapCount)
         isTapped = true
+        self.myhand.image = UIImage(named: "my-par-swift.png")
+
         print("true1　ワンタップ")
+        
+        UIView.animateWithDuration(
+            5.0,
+            delay:0.0,
+            options:UIViewAnimationOptions.CurveEaseInOut,
+            animations: {() -> Void in
+                self.myhand.hidden = false
+
+            },
+            completion:{(Bool) -> Void in
+               self.myhand.hidden = true
+            }
+            
+        )
+
     }
+    
     func view_MultiTapped(){
         scorel.text = String(tapCount)
         isMultiTapped = true
         print("true2　同時タップ")
+        myhand.hidden = false
+        self.myhand.image = UIImage(named: "mygu.png")
+        
+        UIView.animateWithDuration(
+            0.7,
+            delay:0.0,
+            options:UIViewAnimationOptions.CurveEaseInOut,
+            animations: {() -> Void in
+                self.myhand.hidden = false
+                self.myhand.image = UIImage(named: "my-par-swift.png")
+            },
+            completion:{(Bool) -> Void in
+                self.myhand.hidden = true
+            }
+            
+        )
+
+
     }
     func up(){
             timeCount = timeCount + 1
@@ -72,6 +111,7 @@ class ViewController: UIViewController {
         //乱数　表示ーーーーーーーーーーーー
         if tapCount==2{
             self .gameclear()
+            
         }//１０でクリア画面へ
         if timeCount==1 {
             countdown.text = "3"
@@ -157,11 +197,15 @@ class ViewController: UIViewController {
             //アニメーション
         }//奇数
     }//３以上
+    
     func gameover(){
+        timer.invalidate()
         let targetView = self.storyboard!.instantiateViewControllerWithIdentifier( "gameover" )
         self.presentViewController( targetView as! GameoverViewController, animated: true, completion: nil)
     }
+    
     func gameclear(){
+        timer.invalidate()
         let targetView = self.storyboard!.instantiateViewControllerWithIdentifier( "gameclear" )
         self.presentViewController( targetView as! GameclearViewController, animated: true, completion: nil)
     }

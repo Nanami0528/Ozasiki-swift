@@ -55,6 +55,12 @@
                             <view contentMode="scaleToFill" id="xLS-ca-g1r">
                                 <rect key="frame" x="-12" y="-17" width="340" height="598"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my-par-swift.png" id="SyI-TY-04o">
+                                        <rect key="frame" x="0.0" y="285" width="354" height="587"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.59999999999999998" green="0.80000000000000004" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dbv-tB-a3Q">
@@ -102,6 +108,7 @@
                         <outlet property="countdown" destination="apP-TF-WNE" id="sYR-St-G4t"/>
                         <outlet property="hand" destination="xXJ-zw-Dsb" id="iY7-uX-sKB"/>
                         <outlet property="lefthand" destination="Y4n-h5-p0n" id="PnW-KA-mRR"/>
+                        <outlet property="myhand" destination="SyI-TY-04o" id="cV6-yZ-fK0"/>
                         <outlet property="scorel" destination="D21-qM-dgx" id="yNW-MQ-lFa"/>
                         <outlet property="startButton" destination="dbv-tB-a3Q" id="Qdx-sc-zDX"/>
                         <outlet property="tapview" destination="xLS-ca-g1r" id="E5S-15-MDV"/>
@@ -176,6 +183,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="my-par-swift.png" width="640" height="1136"/>
         <image name="お座敷　パー.png" width="640" height="1136"/>
         <image name="手のひら.png" width="640" height="1136"/>
     </resources>
