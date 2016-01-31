@@ -12,7 +12,10 @@ class GameoverViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    @IBAction func backToHome(){
+        let targetView = self.storyboard!.instantiateViewControllerWithIdentifier( "home" )
+        self.presentViewController( targetView as! HomeViewController, animated: true, completion: nil)
         
     }
 }
