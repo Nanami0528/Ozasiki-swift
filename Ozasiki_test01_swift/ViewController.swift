@@ -108,7 +108,9 @@ class ViewController: UIViewController {
 
 
     }
-    func up(){
+    
+       func up(){
+        
             timeCount = timeCount + 1
             timeCountl.text = String(timeCount)
         //乱数　表示ーーーーーーーーーーーー
@@ -121,9 +123,19 @@ class ViewController: UIViewController {
         //乱数　表示ーーーーーーーーーーーー
         if tapCount==10{
             self .gameclear()
-            
-            
         }//１０でクリア画面へ
+        
+        if level==0.9{
+            
+            if timeCount==10{
+                
+                level = 0.5
+                print(level)
+            }
+            
+        }
+        
+        
         if timeCount==1 {
             countdown.text = "3"
         } else if timeCount==2 {
@@ -196,6 +208,7 @@ class ViewController: UIViewController {
             //アニメーション
         }//奇数
     }//３以上
+    
     
     func gameover(){
         timer.invalidate()

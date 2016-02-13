@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
     }
     @IBAction func level2(){
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("main") as! ViewController
-        vc.level = 0.8
+        vc.level = 0.9//ここ変えるならだんだん早くするコードバグる注意！
         self.presentViewController(vc, animated: true, completion: nil)
     }
 }
