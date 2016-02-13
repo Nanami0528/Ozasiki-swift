@@ -137,22 +137,6 @@ class ViewController: UIViewController {
                         countdown.hidden = true
         }
         if timeCount<3  {
-            UIView.animateWithDuration(
-                level,
-                delay:0.0,
-                options:UIViewAnimationOptions.CurveEaseInOut,
-                animations: {() -> Void in
-                    self.hand.image = UIImage(named: "お座敷　手中間.png")
-                    self.hand.transform = CGAffineTransformMakeScale(2.5, 2.5)
-                    self.hand.transform = CGAffineTransformMakeScale(1.0, 1.0)
-                    
-                   
-                },
-                completion:{isSucceeded in
-                    self.hand.center = self.lefthand.center
-                    self.hand.image = UIImage(named: "お座敷　パー.png")
-                }
-            )
         }
         else if timeCount%2==1{
                 if timeCount>4 {
