@@ -18,6 +18,10 @@ class ViewController: UIViewController {
     @IBOutlet var startButton:UIButton!
     @IBOutlet var countdown:UILabel!
     @IBOutlet var myhand:UIImageView!
+    @IBOutlet var owan:UIImageView!
+    @IBOutlet var blackcover:UIImageView!
+
+    
     
     var timeCount:Double = 0
     var timer: NSTimer!
@@ -60,11 +64,14 @@ class ViewController: UIViewController {
         print("true1　ワンタップ")
         
         UIView.animateWithDuration(
-            5.0,
+            0.5,
             delay:0.0,
             options:UIViewAnimationOptions.CurveEaseInOut,
             animations: {() -> Void in
                 self.myhand.hidden = false
+                self.myhand.transform = CGAffineTransformMakeScale(2.0, 2.0)
+                self.myhand.transform = CGAffineTransformMakeScale(1.0, 1.0)
+               // self.myhand.center = self.view.center
 
             },
             completion:{(Bool) -> Void in
@@ -83,12 +90,15 @@ class ViewController: UIViewController {
         self.myhand.image = UIImage(named: "mygu.png")
         
         UIView.animateWithDuration(
-            0.7,
+            0.5,
             delay:0.0,
             options:UIViewAnimationOptions.CurveEaseInOut,
             animations: {() -> Void in
                 self.myhand.hidden = false
-                self.myhand.image = UIImage(named: "my-par-swift.png")
+                //self.myhand.image = UIImage(named: "my-par-swift.png")
+                self.myhand.transform = CGAffineTransformMakeScale(2.0, 2.0)
+                self.myhand.transform = CGAffineTransformMakeScale(1.0, 1.0)
+                
             },
             completion:{(Bool) -> Void in
                 self.myhand.hidden = true
@@ -109,8 +119,9 @@ class ViewController: UIViewController {
              print("0")
         }
         //乱数　表示ーーーーーーーーーーーー
-        if tapCount==2{
+        if tapCount==10{
             self .gameclear()
+            
             
         }//１０でクリア画面へ
         if timeCount==1 {
@@ -120,13 +131,14 @@ class ViewController: UIViewController {
         } else if timeCount==3{
             countdown.text = "1"
         } else if timeCount==4{
+            blackcover.hidden = true
             countdown.text = "始め"
         } else if timeCount==5{
-            countdown.hidden = true
+                        countdown.hidden = true
         }
         if timeCount<3  {
             UIView.animateWithDuration(
-                0.7,
+                level,
                 delay:0.0,
                 options:UIViewAnimationOptions.CurveEaseInOut,
                 animations: {() -> Void in
@@ -163,6 +175,7 @@ class ViewController: UIViewController {
             isMultiTapped = false
             ran = arc4random_uniform(2)
             if ran==0 {
+                
                 //アニメーション
                 UIView.animateWithDuration(
                     level,
@@ -175,6 +188,7 @@ class ViewController: UIViewController {
                         self.hand.transform = CGAffineTransformMakeScale(1.0, 1.0)
                     },
                     completion:{(Bool) -> Void in
+                        self.owan.hidden = false
                         self.hand.center = self.lefthand.center
                     }
                 )
@@ -188,8 +202,9 @@ class ViewController: UIViewController {
                         self.hand.transform = CGAffineTransformMakeScale(2.5, 2.5)
                         self.hand.center = self.view.center
                         self.hand.transform = CGAffineTransformMakeScale(1.0, 1.0)
-                    },
+                                            },
                     completion:{(Bool) -> Void in
+                        self.owan.hidden = true
                         self.hand.center = self.lefthand.center
                     }
                 )
@@ -202,12 +217,14 @@ class ViewController: UIViewController {
         timer.invalidate()
         let targetView = self.storyboard!.instantiateViewControllerWithIdentifier( "gameover" )
         self.presentViewController( targetView as! GameoverViewController, animated: true, completion: nil)
+        timer.invalidate()
     }
     
     func gameclear(){
         timer.invalidate()
         let targetView = self.storyboard!.instantiateViewControllerWithIdentifier( "gameclear" )
         self.presentViewController( targetView as! GameclearViewController, animated: true, completion: nil)
+        timer.invalidate()
     }
 }
 

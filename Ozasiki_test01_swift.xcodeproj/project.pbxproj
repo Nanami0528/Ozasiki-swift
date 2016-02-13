@@ -23,6 +23,8 @@
 		E989CCCD1C5DB45900432BD8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E989CCCC1C5DB45900432BD8 /* HomeViewController.swift */; };
 		E989CCCF1C5DEF7D00432BD8 /* my-par-swift.png in Resources */ = {isa = PBXBuildFile; fileRef = E989CCCE1C5DEF7D00432BD8 /* my-par-swift.png */; };
 		E989CCD11C5DF20800432BD8 /* Mygu.png in Resources */ = {isa = PBXBuildFile; fileRef = E989CCD01C5DF20800432BD8 /* Mygu.png */; };
+		E989CCD51C6F006100432BD8 /* おわんs.png in Resources */ = {isa = PBXBuildFile; fileRef = E989CCD41C6F006100432BD8 /* おわんs.png */; };
+		E989CCD91C6F0E2400432BD8 /* 黒カバー.png in Resources */ = {isa = PBXBuildFile; fileRef = E989CCD81C6F0E2400432BD8 /* 黒カバー.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		E989CCCC1C5DB45900432BD8 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E989CCCE1C5DEF7D00432BD8 /* my-par-swift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my-par-swift.png"; sourceTree = "<group>"; };
 		E989CCD01C5DF20800432BD8 /* Mygu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mygu.png; sourceTree = "<group>"; };
+		E989CCD41C6F006100432BD8 /* おわんs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "おわんs.png"; sourceTree = "<group>"; };
+		E989CCD81C6F0E2400432BD8 /* 黒カバー.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "黒カバー.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 		E9640BB11C396DBE009EEA24 /* Ozasiki_test01_swift */ = {
 			isa = PBXGroup;
 			children = (
+				E989CCD81C6F0E2400432BD8 /* 黒カバー.png */,
+				E989CCD41C6F006100432BD8 /* おわんs.png */,
 				E928D8FF1C4B9FD8009C83E2 /* 手グー.png */,
 				E989CCD01C5DF20800432BD8 /* Mygu.png */,
 				E989CCCE1C5DEF7D00432BD8 /* my-par-swift.png */,
@@ -256,10 +262,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E989CCD91C6F0E2400432BD8 /* 黒カバー.png in Resources */,
 				E989CCD11C5DF20800432BD8 /* Mygu.png in Resources */,
 				E9640C651C4A1FC0009EEA24 /* 手のひら.png in Resources */,
 				E9640BBD1C396DBF009EEA24 /* LaunchScreen.storyboard in Resources */,
 				E928D8FC1C4A9236009C83E2 /* お座敷　パー.png in Resources */,
+				E989CCD51C6F006100432BD8 /* おわんs.png in Resources */,
 				E989CCCF1C5DEF7D00432BD8 /* my-par-swift.png in Resources */,
 				E928D8FE1C4AA2F7009C83E2 /* お座敷　手中間.png in Resources */,
 				E9640BBA1C396DBF009EEA24 /* Assets.xcassets in Resources */,
@@ -434,6 +442,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Ozasiki_test01_swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tomozoe.Ozasiki-test01-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -445,6 +454,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Ozasiki_test01_swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tomozoe.Ozasiki-test01-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
